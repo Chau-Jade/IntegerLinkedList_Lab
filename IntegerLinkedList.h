@@ -23,6 +23,7 @@ public:
 	int size();
 	void removeFirst();
 	void removeLast();
+	int get(int pos);
 
 	IntegerLinkedList();
 	virtual ~IntegerLinkedList();

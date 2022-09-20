@@ -26,6 +26,8 @@ int main(int argc, char **argv) {
 	sll->removeLast();
 	sll->print();
 
+	cout << sll->get(2) << endl;
+
 	delete sll;
 
 	return 0;

@@ -113,7 +113,7 @@ void IntegerLinkedList::removeLast() {
 		return;
 	}
 
-	// Get the second to last node 
+	// Get the second to last node
 	Node *nodePointer = this->head;
 	while (nodePointer->getNext() != this->tail) {
 		nodePointer = nodePointer->getNext();
@@ -125,11 +125,29 @@ void IntegerLinkedList::removeLast() {
 	// Made the second to last node becomes the last node
 	nodePointer->setNext(0); //i.e after the last node is NULL
 
-	// Update the tail 
+	// Update the tail
 	this->tail = nodePointer;
 
 	// Reduce the number of nodes by 1
 	this->countNodes--;
+}
+
+int IntegerLinkedList::get(int pos) {
+	// Check is position entered is appropriate
+	if (this->countNodes < pos) {
+		return -1;
+	}
+
+	//Get the address of the first node
+	Node *nodeOfInterest = this->head;
+
+	//Loop through the linked list until the desired position
+	for (int i = 1; i < pos; i++) {
+		nodeOfInterest = nodeOfInterest->getNext();
+	}
+
+	// return the value of the node at the desired position
+	return nodeOfInterest->getValue();
 }
 
 IntegerLinkedList::~IntegerLinkedList() {
