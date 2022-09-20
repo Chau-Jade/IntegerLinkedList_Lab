@@ -207,8 +207,9 @@ void IntegerLinkedList::removePosition(int pos) {
 }
 
 IntegerLinkedList::~IntegerLinkedList() {
-	// If the linkedlist is not empty, loop through and delete each node from tail to head
-//	if (this->head->getNext() != 0) {
-//
-//	}
+	// Loop through the linked list and delete all the nodes until the list is empty
+	while (this->countNodes > 0) {
+		this->removeFirst();
+		// this->print(); // for debugging
+	}
 }
