@@ -20,10 +20,11 @@ public:
 	void print() const;
 	void add(int v);
 	void addFront(int v);
-	int size();
+	int size() const;
 	void removeFirst();
 	void removeLast();
-	int get(int pos);
+	int get(int pos) const;
+	void addAtPosition(int value, int pos);
 
 	IntegerLinkedList();
 	virtual ~IntegerLinkedList();

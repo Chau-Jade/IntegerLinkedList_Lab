@@ -76,7 +76,7 @@ void IntegerLinkedList::addFront(int v) {
 	this->countNodes++;
 }
 
-int IntegerLinkedList::size() {
+int IntegerLinkedList::size() const {
 	return countNodes;
 }
 
@@ -132,7 +132,7 @@ void IntegerLinkedList::removeLast() {
 	this->countNodes--;
 }
 
-int IntegerLinkedList::get(int pos) {
+int IntegerLinkedList::get(int pos) const {
 	// Check is position entered is appropriate
 	if (this->countNodes < pos) {
 		return -1;
@@ -148,6 +148,29 @@ int IntegerLinkedList::get(int pos) {
 
 	// return the value of the node at the desired position
 	return nodeOfInterest->getValue();
+}
+
+void IntegerLinkedList::addAtPosition(int value, int pos) {
+	// New up a node
+	Node *nodeToBeInserted = new Node(value);
+
+	// Loop through the linked list to get the desired position
+	Node *nodeOfInterest = this->head;
+	for (int i = 1; i < pos; i++) {
+		nodeOfInterest = nodeOfInterest->getNext();
+	}
+
+	// Get the address of the node after the desired position
+	Node *nodeAfter = nodeOfInterest->getNext();
+
+	// Make the node at desired position to point to the new node
+	nodeOfInterest->setNext(nodeToBeInserted);
+
+	// Make the new node point to the one after the desired position
+	nodeToBeInserted->setNext(nodeAfter);
+
+	// Increase the number of nodes by 1 
+	this->countNodes++;
 }
 
 IntegerLinkedList::~IntegerLinkedList() {

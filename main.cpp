@@ -26,7 +26,12 @@ int main(int argc, char **argv) {
 	sll->removeLast();
 	sll->print();
 
+	// test get(int pos) method.
 	cout << sll->get(2) << endl;
+
+	// test the addAtPosition method
+	sll->addAtPosition(5, 2);
+	sll->print();
 
 	delete sll;
 
