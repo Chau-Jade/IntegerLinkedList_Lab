@@ -81,16 +81,54 @@ int IntegerLinkedList::size() {
 }
 
 void IntegerLinkedList::removeFirst() {
-	// Get the address of the first node 
+	// If there is one node in the list, delete all;
+	if (this->countNodes == 1) {
+		delete this->head;
+		this->head = 0;
+		this->tail = 0;
+		this->countNodes--;
+		return;
+	}
+
+	// Get the address of the first node
 	Node *firstNode = this->head;
 
 	// Move the head pointer to the next node
-	firstNode->setNext(this->head);
+	this->head = this->head->getNext();
 
-	// Delete the first node 
+	// Delete the first node
 	delete firstNode;
 
 	// Decrease the total nodes by 1
+	this->countNodes--;
+}
+
+void IntegerLinkedList::removeLast() {
+	// If there is one node in the list, delete all;
+	if (this->countNodes == 1) {
+		delete this->head;
+		this->head = 0;
+		this->tail = 0;
+		this->countNodes--;
+		return;
+	}
+
+	// Get the second to last node 
+	Node *nodePointer = this->head;
+	while (nodePointer->getNext() != this->tail) {
+		nodePointer = nodePointer->getNext();
+	}
+
+	// Delete the current tail
+	delete nodePointer->getNext();
+
+	// Made the second to last node becomes the last node
+	nodePointer->setNext(0); //i.e after the last node is NULL
+
+	// Update the tail 
+	this->tail = nodePointer;
+
+	// Reduce the number of nodes by 1
 	this->countNodes--;
 }
 

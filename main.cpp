@@ -18,6 +18,14 @@ int main(int argc, char **argv) {
 	sll->print();
 	cout << sll->size() << endl; // print out the size of the linked list
 
+	// test remove first method
+	sll->removeFirst();
+	sll->print();
+
+	// test remove last method
+	sll->removeLast();
+	sll->print();
+
 	delete sll;
 
 	return 0;

@@ -22,6 +22,7 @@ public:
 	void addFront(int v);
 	int size();
 	void removeFirst();
+	void removeLast();
 
 	IntegerLinkedList();
 	virtual ~IntegerLinkedList();
