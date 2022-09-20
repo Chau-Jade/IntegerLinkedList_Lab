@@ -20,6 +20,8 @@ public:
 	void print() const;
 	void add(int v);
 	void addFront(int v);
+	int size();
+	void removeFirst();
 
 	IntegerLinkedList();
 	virtual ~IntegerLinkedList();

@@ -16,6 +16,7 @@ int main(int argc, char **argv) {
 
 	// print the linkedlist
 	sll->print();
+	cout << sll->size() << endl; // print out the size of the linked list
 
 	delete sll;
 

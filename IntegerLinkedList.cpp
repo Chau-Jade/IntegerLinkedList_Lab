@@ -75,7 +75,28 @@ void IntegerLinkedList::addFront(int v) {
 	// Increase the total number of nodes in the linked list by 1
 	this->countNodes++;
 }
-IntegerLinkedList::~IntegerLinkedList() {
-	// TODO Auto-generated destructor stub
+
+int IntegerLinkedList::size() {
+	return countNodes;
 }
 
+void IntegerLinkedList::removeFirst() {
+	// Get the address of the first node 
+	Node *firstNode = this->head;
+
+	// Move the head pointer to the next node
+	firstNode->setNext(this->head);
+
+	// Delete the first node 
+	delete firstNode;
+
+	// Decrease the total nodes by 1
+	this->countNodes--;
+}
+
+IntegerLinkedList::~IntegerLinkedList() {
+	// If the linkedlist is not empty, loop through and delete each node from tail to head
+//	if (this->head->getNext() != 0) {
+//
+//	}
+}
