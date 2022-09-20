@@ -33,6 +33,10 @@ int main(int argc, char **argv) {
 	sll->addAtPosition(5, 2);
 	sll->print();
 
+	// test the removePosition method 
+	sll->removePosition(4);
+	sll->print();
+
 	delete sll;
 
 	return 0;

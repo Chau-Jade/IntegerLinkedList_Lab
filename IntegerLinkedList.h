@@ -25,6 +25,7 @@ public:
 	void removeLast();
 	int get(int pos) const;
 	void addAtPosition(int value, int pos);
+	void removePosition(int pos);
 
 	IntegerLinkedList();
 	virtual ~IntegerLinkedList();
